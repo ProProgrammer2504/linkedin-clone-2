@@ -59,6 +59,10 @@ export default function Header(props) {
                 <img src="/images/user.svg" alt="User" />
                 <span>Me</span>
                 <img src="/images/down-icon.svg" alt="" />
+
+                <SignOut>
+                  <a>Sign Out</a>
+                </SignOut>
               </a>
             </User>
 
@@ -175,8 +179,7 @@ const NavListWrap = styled.ul`
 const NavList = styled.li`
   display: flex;
   align-items: center;
-  margin: 2px;
-  padding: 2px;
+  margin-top: 2px;
   a {
     align-items: center;
     background: transparent;
@@ -211,6 +214,19 @@ const NavList = styled.li`
   }
 `;
 
+const SignOut = styled.div`
+  position: absolute;
+  top: 45px;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  width: 100px;
+  height: 40px;
+  font-size: 16px;
+  transition-duration: 167ms;
+  text-align: center;
+  display: none;
+`;
+
 const User = styled(NavList)`
   a > svg {
     width: 24px;
@@ -226,6 +242,14 @@ const User = styled(NavList)`
   span {
     display: flex;
     align-items: center;
+  }
+
+  &:hover {
+    ${SignOut} {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
   }
 `;
 
